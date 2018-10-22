@@ -1,0 +1,45 @@
+import java.awt.Component;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import com.mongodb.BasicDBObject;
+
+public class LoginService {
+	JFrame frame;
+
+	UserDao userDao;
+	Lobby lobby;
+
+	LoginService() {
+
+	}
+
+	void setLobby(String username) {
+
+		lobby = new Lobby();
+
+		lobby.usernameProfile.setText(username);
+		BasicDBObject query = new BasicDBObject();
+		query.put("username", username);
+		String pathpicture = userDao.getImageOfUser(query);
+		ImageIcon image = new ImageIcon(pathpicture);
+		Image images = image.getImage();
+		Image newimg = images.getScaledInstance(147, 147, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+		image = new ImageIcon(newimg);
+		lobby.pictureProfile.setIcon(image);
+		lobby.setVisible(true);
+
+	}
+
+	boolean checkLogin(String username, String password) {
+		BasicDBObject query = new BasicDBObject();
+		query.put("username", username);
+		query.put("password", password);
+		userDao = new UserDao();
+		return userDao.getUserLogin(query);
+	}
+
+}

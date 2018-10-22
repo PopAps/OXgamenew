@@ -20,6 +20,7 @@ import javax.swing.border.SoftBevelBorder;
 
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 
 import javax.swing.border.BevelBorder;
 import javax.swing.JTextField;
@@ -38,9 +39,10 @@ public class Lobby extends JFrame {
 	private JTextField textField;
 	DBCursor cursor;
 	ConnectMongoDB con;
-	public JLabel pictureProfile; 
-	public JLabel usernameProfile; 
-	public String  pathpicture; 
+	public JLabel pictureProfile;
+	public JLabel usernameProfile;
+	public String pathpicture;
+
 	/**
 	 * Launch the application.
 	 */
@@ -62,16 +64,16 @@ public class Lobby extends JFrame {
 	 */
 	public Lobby() {
 		setTitle("OXGAME");
-	 
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1003, 672);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(184, 134, 11));
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-	    panellist();
+		panellist();
 
 		textField = new JTextField();
 		textField.setBounds(562, 66, 337, 23);
@@ -80,79 +82,86 @@ public class Lobby extends JFrame {
 
 		JButton btnLogout = new JButton("Logout");
 		btnLogout.setBounds(823, 570, 89, 23);
-		btnLogout.setBackground(new Color(205, 133, 63));
+		btnLogout.setBackground(new Color(51,153,255));
 		contentPane.add(btnLogout);
 		JButton btnScored = new JButton("Score");
 		btnScored.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-                   
+
 			}
 		});
 
-		btnScored.setBounds(823, 536, 89, 23);
-		btnScored.setBackground(new Color(205, 133, 63));
+		btnScored.setBounds(719, 571, 89, 23);
+		btnScored.setBackground(new Color(51,153,255));
 		contentPane.add(btnScored);
-		
-		JButton btnSearch = new JButton("search");
-		btnSearch.setBackground(new Color(205, 133, 63));
-		btnSearch.setBounds(899, 66, 78, 23);
-		
-		contentPane.add(btnSearch);
-		
-		pictureProfile = new JLabel("");
-		pictureProfile.setBounds(106, 66, 200, 200);
 
-		contentPane.add(pictureProfile);
-		
+		JButton btnSearch = new JButton("search");
+		btnSearch.setBackground(new Color(51,153,255));
+		btnSearch.setBounds(899, 66, 78, 23);
+
+		contentPane.add(btnSearch);
+
 		usernameProfile = new JLabel("");
 		usernameProfile.setHorizontalAlignment(SwingConstants.CENTER);
-		usernameProfile.setForeground(Color.DARK_GRAY);
+		usernameProfile.setForeground(Color.ORANGE);
 		usernameProfile.setFont(new Font("Dialog", Font.BOLD, 43));
-		usernameProfile.setBounds(143, 260, 229, 71);
+		usernameProfile.setBounds(146, 284, 229, 71);
 		contentPane.add(usernameProfile);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
 		panel.setBounds(0, 604, 987, 29);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
+
 		JLabel lblSoftdevinformatiscbuu = new JLabel("SOFT_DEV @informatiscbuu");
 		lblSoftdevinformatiscbuu.setForeground(new Color(255, 255, 255));
 		lblSoftdevinformatiscbuu.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSoftdevinformatiscbuu.setBounds(338, 11, 258, 14);
 		panel.add(lblSoftdevinformatiscbuu);
-		
+
 		JButton btnRank = new JButton("Ranking");
 		btnRank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnRank.setBounds(670, 536, 89, 23);
-		btnRank.setBackground(new Color(205, 133, 63));
+		btnRank.setBounds(620, 571, 89, 23);
+		btnRank.setBackground(new Color(51,153,255));
 		contentPane.add(btnRank);
-		
-		JLabel lblUsername = new JLabel("NAME:");
-		lblUsername.setBounds(68, 277, 110, 48);
-		lblUsername.setForeground(Color.DARK_GRAY);
+
+		JLabel lblUsername = new JLabel("User :");
+		lblUsername.setBounds(67, 297, 110, 48);
+		lblUsername.setForeground(Color.ORANGE);
 		lblUsername.setFont(new Font("Dialog", Font.BOLD, 28));
 		contentPane.add(lblUsername);
 	
+	
 		
-		
-
+						pictureProfile = new JLabel("");
+						pictureProfile.setBounds(104, 62, 147, 147);
+						contentPane.add(pictureProfile);
+						
+						JLabel labalframe = new JLabel("");
+						labalframe.setIcon(new ImageIcon("../Ox/src/photo/frame.png"));
+						labalframe.setBounds(2, 11, 334, 263);
+						contentPane.add(labalframe);
+						
+						JLabel bg = new JLabel("");
+						bg.setBounds(0, 0, 987, 604);
+						bg.setIcon(getNewImage("../Ox/src/photo/bcc.jpg",987, 604));
+						contentPane.add(bg);
+						
+				
 	}
 
-	@SuppressWarnings("unused")
-	private Image getScaledImage(Image srcImg, int w, int h) {
-		BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-		Graphics2D g2 = resizedImg.createGraphics();
-		g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-		g2.drawImage(srcImg, 0, 0, w, h, null);
-		g2.dispose();
-
-		return resizedImg;
+	public ImageIcon getNewImage(String path,int w,int h) {
+		ImageIcon image = new ImageIcon(path);
+		Image images = image.getImage();
+		Image newimg = images.getScaledInstance(w,h, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+		image = new ImageIcon(newimg);
+		return image; 
 	}
+
 	public void panellist() {
 
 		JPanel panellist = new JPanel();
@@ -165,36 +174,44 @@ public class Lobby extends JFrame {
 		final JScrollPane scroll = new JScrollPane(panel);
 		scroll.setPreferredSize(new Dimension(415, 410));
 		gui.add(scroll, BorderLayout.CENTER);
-		Lobby_DB connect = new Lobby_DB();
-		
+
 		String username = "";
 		String picture = "";
-		
-		DBCollection collection = connect.Show_listfriend();
-		List userlist = collection.distinct("username");
-		List picturelist = collection.distinct("picture");
-		
-		for(int i=0;i<userlist.size()&&i<picturelist.size();i++) {
+		int status;
+		UserDao userDao = new UserDao();
+		List<DBObject> listUser = userDao.getUserAll();
+		for (int i = 0; i < listUser.size(); i++) {
+			username = (String) listUser.get(i).get("username");
+			picture = (String) listUser.get(i).get("picture" + "");
+			status =  (int) listUser.get(i).get("status");
 			
-            username = (String) userlist.get(i);
-            picture = (String) picturelist.get(i);
-             
-		    ImageIcon image = new ImageIcon(picture);
-			Image images = image.getImage();
-			Image newimg = images.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-			image = new ImageIcon(newimg);
-			Listfriend listuser = new Listfriend();
+			
+				
+				ImageIcon image = new ImageIcon(picture);
+				Image images = image.getImage();
+				Image newimg = images.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+				image = new ImageIcon(newimg);
+				ListFriendPanel listuser = new ListFriendPanel();
+                
+				if(status==1) {
+					listuser.btnNewButton.setText("Online");
+					listuser.btnNewButton.setBackground(new Color(102,255,102));
+				}else if(status==0){
+					listuser.btnNewButton.setText("Playing");
+					listuser.btnNewButton.setBackground(new Color(255,102,0));
+			    }else {
+			    	listuser.btnNewButton.setText("Ofline");
+					listuser.btnNewButton.setBackground(new Color(204, 204, 204));
+			    }
+				
+				listuser.setlabel(image);
+				listuser.setlabelUser(username + "         ");				
+				panel.add(listuser.pannelfrined());
+				panel.revalidate();
+				int height = (int) panel.getPreferredSize().getHeight();
+				scroll.getVerticalScrollBar().setValue(height);
 
-			listuser.setlabel(image);
-			listuser.setlabelUser(username + "         ");
-			panel.add(listuser.pannelfrined());
-			panel.revalidate();
-			int height = (int) panel.getPreferredSize().getHeight();
-			scroll.getVerticalScrollBar().setValue(height);
-			
-		
-	       
-		
+
 		}
 
 		panellist.add(gui);
