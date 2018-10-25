@@ -10,23 +10,20 @@ public class RegisterService {
 	
 	public RegisterService(String nickname, String username, String password, String re_password,String picture) {
 	
-		if(password.length()>=6) {
-			 if(checkUserName(username)==false) {
-				  JOptionPane.showMessageDialog(null, "Username incorrect!!");
-			  }else {
-				  if(password.equals(re_password)) {
-					      input(nickname,username,password,picture); 
-					 JOptionPane.showMessageDialog(null, "Successful!!");
-				  }else {
-					  JOptionPane.showMessageDialog(null, "Password incorrect!!");
-				  }
-				
-			  }
-		}else {
-			JOptionPane.showMessageDialog(null, "Password is greater than 6 characters");
-		}
 		
-		 
+		
+		  if(checkUserName(username)==false) {
+			  JOptionPane.showMessageDialog(frame, "Username incorrect!!");
+		  }else {
+			  if(password.equals(re_password)) {
+				      input(nickname,username,password,picture); 
+				 JOptionPane.showMessageDialog(frame, "Successful!!");
+			  }else {
+				  JOptionPane.showMessageDialog(frame, "Password incorrect!!");
+			  }
+			
+			 
+		  }
 	}
 	 void input(String nickname,String username ,String password,String StringPath){
         BasicDBObject insertUser= new BasicDBObject();
