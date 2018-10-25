@@ -92,7 +92,6 @@ public class Home extends JFrame{
 		homr_background.setBounds(0, 0, 1003, 672);
 		contentPane.add(homr_background);
 		contentPane.setLayout(null);
-		
 	}
 
 }

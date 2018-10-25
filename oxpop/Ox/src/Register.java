@@ -98,18 +98,7 @@ public class Register extends JFrame{
 		btnpic1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				register_idPic = "/picplayer/1.png";
-
-				btnpic1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
-						new Color(0, 0, 0), new Color(0, 0, 0)));
-				btnpic2.setBorder(null);
-				btnpic3.setBorder(null);
-				btnpic4.setBorder(null);
-				btnpic5.setBorder(null);
-				btnpic6.setBorder(null);
-				btnpic7.setBorder(null);
-				btnpic8.setBorder(null);
-				btnpic9.setBorder(null);
+				setBottonBorder(btnpic1,btnpic2,btnpic3,btnpic4,btnpic5,btnpic6,btnpic7,btnpic8,btnpic9,"/picplayer/1.png");
 			}
 		});
 		btnpic1.setIcon(new ImageIcon(Register.class.getResource("/picplayer/1.png")));
@@ -143,18 +132,7 @@ public class Register extends JFrame{
 		btnpic2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				register_idPic = "/picplayer/2.png";
-
-				btnpic2.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
-						new Color(0, 0, 0), new Color(0, 0, 0)));
-				btnpic1.setBorder(null);
-				btnpic3.setBorder(null);
-				btnpic4.setBorder(null);
-				btnpic5.setBorder(null);
-				btnpic6.setBorder(null);
-				btnpic7.setBorder(null);
-				btnpic8.setBorder(null);
-				btnpic9.setBorder(null);
+				setBottonBorder(btnpic2,btnpic1,btnpic3,btnpic4,btnpic5,btnpic6,btnpic7,btnpic8,btnpic9,"/picplayer/2.png");
 			}
 		});
 
@@ -164,17 +142,7 @@ public class Register extends JFrame{
 		btnpic3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				register_idPic = "/picplayer/10.png";
-				btnpic3.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
-						new Color(0, 0, 0), new Color(0, 0, 0)));
-				btnpic2.setBorder(null);
-				btnpic1.setBorder(null);
-				btnpic4.setBorder(null);
-				btnpic5.setBorder(null);
-				btnpic6.setBorder(null);
-				btnpic7.setBorder(null);
-				btnpic8.setBorder(null);
-				btnpic9.setBorder(null);
+				setBottonBorder(btnpic3,btnpic2,btnpic1,btnpic4,btnpic5,btnpic6,btnpic7,btnpic8,btnpic9,"/picplayer/10.png");
 			}
 		});
 
@@ -184,17 +152,7 @@ public class Register extends JFrame{
 		btnpic6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				register_idPic = "/picplayer/6.png";
-				btnpic6.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
-						new Color(0, 0, 0), new Color(0, 0, 0)));
-				btnpic2.setBorder(null);
-				btnpic3.setBorder(null);
-				btnpic4.setBorder(null);
-				btnpic1.setBorder(null);
-				btnpic5.setBorder(null);
-				btnpic7.setBorder(null);
-				btnpic8.setBorder(null);
-				btnpic9.setBorder(null);
+				setBottonBorder(btnpic6,btnpic2,btnpic3,btnpic4,btnpic5,btnpic1,btnpic7,btnpic8,btnpic9,"/picplayer/6.png");
 			}
 		});
 
@@ -204,17 +162,7 @@ public class Register extends JFrame{
 		btnpic4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				register_idPic = "/picplayer/4.png";
-				btnpic4.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
-						new Color(0, 0, 0), new Color(0, 0, 0)));
-				btnpic2.setBorder(null);
-				btnpic3.setBorder(null);
-				btnpic1.setBorder(null);
-				btnpic5.setBorder(null);
-				btnpic6.setBorder(null);
-				btnpic7.setBorder(null);
-				btnpic8.setBorder(null);
-				btnpic9.setBorder(null);
+				setBottonBorder(btnpic4,btnpic2,btnpic3,btnpic1,btnpic5,btnpic6,btnpic7,btnpic8,btnpic9,"/picplayer/4.png");
 			}
 		});
 
@@ -224,17 +172,7 @@ public class Register extends JFrame{
 		btnpic7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				register_idPic = "/picplayer/7.png";
-				btnpic7.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
-						new Color(0, 0, 0), new Color(0, 0, 0)));
-				btnpic2.setBorder(null);
-				btnpic3.setBorder(null);
-				btnpic4.setBorder(null);
-				btnpic1.setBorder(null);
-				btnpic6.setBorder(null);
-				btnpic5.setBorder(null);
-				btnpic8.setBorder(null);
-				btnpic9.setBorder(null);
+				setBottonBorder(btnpic7,btnpic2,btnpic3,btnpic4,btnpic5,btnpic6,btnpic1,btnpic8,btnpic9,"/picplayer/7.png");
 			}
 		});
 
@@ -244,17 +182,7 @@ public class Register extends JFrame{
 		btnpic8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				register_idPic = "/picplayer/8.png";
-				btnpic8.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
-						new Color(0, 0, 0), new Color(0, 0, 0)));
-				btnpic2.setBorder(null);
-				btnpic3.setBorder(null);
-				btnpic4.setBorder(null);
-				btnpic1.setBorder(null);
-				btnpic6.setBorder(null);
-				btnpic7.setBorder(null);
-				btnpic5.setBorder(null);
-				btnpic9.setBorder(null);
+				setBottonBorder(btnpic8,btnpic2,btnpic3,btnpic4,btnpic5,btnpic6,btnpic7,btnpic1,btnpic9,"/picplayer/8.png");
 			}
 		});
 
@@ -264,17 +192,7 @@ public class Register extends JFrame{
 		btnpic9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				register_idPic = "/picplayer/9.png";
-				btnpic9.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
-						new Color(0, 0, 0), new Color(0, 0, 0)));
-				btnpic2.setBorder(null);
-				btnpic3.setBorder(null);
-				btnpic4.setBorder(null);
-				btnpic1.setBorder(null);
-				btnpic6.setBorder(null);
-				btnpic7.setBorder(null);
-				btnpic8.setBorder(null);
-				btnpic5.setBorder(null);
+				setBottonBorder(btnpic9,btnpic2,btnpic3,btnpic4,btnpic5,btnpic6,btnpic7,btnpic8,btnpic1,"/picplayer/9.png");
 			}
 		});
 
@@ -284,17 +202,7 @@ public class Register extends JFrame{
 		btnpic5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				register_idPic = "/picplayer/5.png";
-				btnpic5.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
-						new Color(0, 0, 0), new Color(0, 0, 0)));
-				btnpic2.setBorder(null);
-				btnpic3.setBorder(null);
-				btnpic4.setBorder(null);
-				btnpic1.setBorder(null);
-				btnpic6.setBorder(null);
-				btnpic7.setBorder(null);
-				btnpic8.setBorder(null);
-				btnpic9.setBorder(null);
+				setBottonBorder(btnpic5,btnpic2,btnpic3,btnpic4,btnpic1,btnpic6,btnpic7,btnpic8,btnpic9,"/picplayer/5.png");
 			}
 		});
 
@@ -362,7 +270,7 @@ public class Register extends JFrame{
 
 		registerPhoto.setIcon(new ImageIcon(Register.class.getResource("/photo/profile.png")));
 		registerPhoto.setBackground(new Color(210, 180, 140));
-		registerPhoto.setBounds(535, 392, 140, 94);
+		registerPhoto.setBounds(535, 363, 140, 134);
 		contentPane.add(registerPhoto);
 
 		JButton btnSelectpic = new JButton("Select photo");
@@ -419,6 +327,20 @@ public class Register extends JFrame{
 		register_Background.setIcon(new ImageIcon(Register.class.getResource("/photo/backRegister.png")));
 		register_Background.setBounds(0, 0, 1003, 672);
 		contentPane.add(register_Background);
+	}
+	void setBottonBorder(JLabel b1,JLabel b2,JLabel b3,JLabel b4,JLabel b5,JLabel b6,JLabel b7,JLabel b8,JLabel b9,String url) {
+		register_idPic = url;
+
+		b1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), new Color(0, 0, 0),
+				new Color(0, 0, 0), new Color(0, 0, 0)));
+		b2.setBorder(null);
+		b3.setBorder(null);
+		b4.setBorder(null);
+		b5.setBorder(null);
+		b6.setBorder(null);
+		b7.setBorder(null);
+		b8.setBorder(null);
+		b9.setBorder(null);
 	}
 
 }
