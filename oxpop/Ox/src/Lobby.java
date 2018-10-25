@@ -42,7 +42,9 @@ public class Lobby extends JFrame {
 	public JLabel pictureProfile;
 	public JLabel usernameProfile;
 	public String pathpicture;
-
+	public String username;
+    LobbyService lobbyService;
+    public static Lobby frame;
 	/**
 	 * Launch the application.
 	 */
@@ -50,7 +52,7 @@ public class Lobby extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Lobby frame = new Lobby();
+					frame = new Lobby();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -81,6 +83,21 @@ public class Lobby extends JFrame {
 		textField.setColumns(10);
 
 		JButton btnLogout = new JButton("Logout");
+		btnLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				System.out.println(username);
+				lobbyService = new LobbyService();
+				lobbyService.Logout(username);
+				Home home = new Home();
+				
+				home.showHome();
+				setVisible(false);
+				
+			
+			
+			}
+		});
 		btnLogout.setBounds(823, 570, 89, 23);
 		btnLogout.setBackground(new Color(51,153,255));
 		contentPane.add(btnLogout);
@@ -193,15 +210,15 @@ public class Lobby extends JFrame {
 				image = new ImageIcon(newimg);
 				ListFriendPanel listuser = new ListFriendPanel();
                 
-				if(status==1) {
-					listuser.btnNewButton.setText("Online");
-					listuser.btnNewButton.setBackground(new Color(102,255,102));
-				}else if(status==0){
-					listuser.btnNewButton.setText("Playing");
-					listuser.btnNewButton.setBackground(new Color(255,102,0));
+				if(status==0) {
+					listuser.status.setText("Online");
+					listuser.status.setBackground(new Color(102,255,102));
+				}else if(status==1){
+					listuser.status.setText("Playing");
+					listuser.status.setBackground(new Color(255,102,0));
 			    }else {
-			    	listuser.btnNewButton.setText("Ofline");
-					listuser.btnNewButton.setBackground(new Color(204, 204, 204));
+			    	listuser.status.setText("Ofline");
+					listuser.status.setBackground(new Color(204, 204, 204));
 			    }
 				
 				listuser.setlabel(image);

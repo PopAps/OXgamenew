@@ -1,0 +1,20 @@
+import com.mongodb.BasicDBObject;
+
+public class LobbyService {
+	  UserDao userDao;
+    
+	  public void Logout(String username,Lobby lob){
+    	  System.out.println(username);
+    	BasicDBObject query = new BasicDBObject();
+  		query.put("username", username);
+  		BasicDBObject newDocument = new BasicDBObject();
+  		newDocument.append("$set", new BasicDBObject().append("status", -1));
+  		userDao = new UserDao();
+  		userDao.updateUser(query, newDocument);
+  		Home home = new Home();
+  	
+		home.showHome();
+		lob.setVisible(false);
+		
+      }
+}

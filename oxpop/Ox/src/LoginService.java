@@ -21,6 +21,7 @@ public class LoginService {
 
 		lobby = new Lobby();
 		lobby.usernameProfile.setText(username);
+		lobby.username = username;
 		
 		BasicDBObject query = new BasicDBObject();
 		query.put("username", username);
@@ -43,6 +44,14 @@ public class LoginService {
 		query.put("password", password);
 		userDao = new UserDao();
 		return userDao.getUserLogin(query);
+	}
+	void updateStatusUser(String username) {
+		BasicDBObject query = new BasicDBObject();
+		query.put("username", username);
+		BasicDBObject newDocument = new BasicDBObject();
+		newDocument.append("$set", new BasicDBObject().append("status", 0));
+		userDao = new UserDao();
+		userDao.updateUser(query, newDocument);
 	}
 
 }

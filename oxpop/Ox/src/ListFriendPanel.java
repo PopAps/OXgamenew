@@ -18,7 +18,7 @@ public class ListFriendPanel extends JPanel {
 	JPanel pannel = new JPanel();
 	JLabel picture;
 	JLabel Username;
-	public JButton btnNewButton;
+	public JButton status;
 	
 	public ListFriendPanel() {
 	
@@ -34,9 +34,9 @@ public class ListFriendPanel extends JPanel {
 		Username.setBounds(139, 11, 100, 40);
 		pannel.add(Username);
 		
-		btnNewButton = new JButton("Join");
-		btnNewButton.setBackground(new Color(205, 133, 63));
-		pannel.add(btnNewButton);
+		status = new JButton("Join");
+		status.setBackground(new Color(205, 133, 63));
+		pannel.add(status);
 		
 
 	}

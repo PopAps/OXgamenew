@@ -38,7 +38,7 @@ public class Register extends JFrame{
 	public String register_idPic = "";
 	public String pathPhoto = "";
 	JLabel registerPhoto = new JLabel("");
-
+	static Register frame;
 	/**
 	 * Launch the application.
 	 */
@@ -46,8 +46,8 @@ public class Register extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Register frame = new Register();
-					frame.setVisible(true);
+					 frame = new Register();
+					 frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -299,7 +299,9 @@ public class Register extends JFrame{
 		Button_register.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				RegisterService register = new RegisterService(registerNickname.getText(), registerUsername.getText(),
-						registerPassword.getText(), registerRepassword.getText(), pathPhoto);
+						registerPassword.getText(), registerRepassword.getText(), pathPhoto,frame);
+				
+				
 
 			}
 		});

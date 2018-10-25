@@ -75,6 +75,7 @@ public class Login extends JFrame{
 		button_Login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (logins.checkLogin(loginUsername.getText(), new String(loginPassword.getPassword())) == true) {
+					logins.updateStatusUser(loginUsername.getText());
 					logins.setLobby(loginUsername.getText());
 					setVisible(false);
 				} else {
